@@ -1,0 +1,81 @@
+@media (max-width: 320px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        position: sticky;
+        background-color: white;
+        top: 0;
+        z-index: 1;
+    }
+
+    .header__logo {
+        height: 20px;
+    }
+
+    header a {
+        font-size: 15px;
+        font-weight: 600;
+        margin-right: 5px;
+    }
+
+    section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-around;
+        padding-bottom: 50px;
+        padding-top: 50px;
+        background: url('img/back.png') no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .about__image {
+        width: 280px;
+    }
+
+    .about__sun-image {
+        width: 75px;
+        height: 75px;
+        animation: rotation 10s infinite linear;
+        position: absolute;
+    }
+
+    .about h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    .about__info {
+        max-width: 320px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .form {
+        display: flex;
+        justify-content: center;
+        background-color: #1D263A;
+        color: #fff;
+        padding: 50px 10px 50px 10px;
+    }
+
+    .form h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .footer__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
