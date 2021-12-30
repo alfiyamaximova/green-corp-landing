@@ -36,6 +36,48 @@
         width: 280px;
     }
 
+    .features {
+        background-color: white;
+        padding: 50px 10px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: auto;
+        grid-row-gap: 50px;
+    }
+
+    .features__feedback {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .features__feedback-left h2 {
+        font-size: 36px;
+    }
+
+    .features__feedback-right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .features__box {
+        max-width: 620px;
+        width: 100%;
+    }
+
+    .features__box h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 36px;
+    }
+
+    .features__savings-box {
+        background-color: #dc5e26;
+        box-shadow: 0 6px 0 rgb(221 95 38 / 20%);
+        margin-bottom: 30px;
+    }
+
     .form {
         display: flex;
         justify-content: center;
