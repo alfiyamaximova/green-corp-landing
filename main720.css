@@ -1,0 +1,51 @@
+@media (max-width: 720px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        position: sticky;
+        background-color: white;
+        top: 0;
+        z-index: 1;
+        max-width: 720px;
+    }
+
+    .about {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 115px 20px;
+        background: url('img/back.png') no-repeat center;
+        background-size: cover;
+    }
+
+    .about h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    .about__sun-image {
+        width: 75px;
+        height: 75px;
+        animation: rotation 10s infinite linear;
+        position: absolute;
+    }
+
+    .about__image {
+        width: 280px;
+    }
+
+    .form {
+        display: flex;
+        justify-content: center;
+        background-color: #1D263A;
+        color: #fff;
+        padding: 115px 20px;
+    }
+
+    .form h1 {
+        font-size: 44px;
+        text-align: center;
+    }
+}

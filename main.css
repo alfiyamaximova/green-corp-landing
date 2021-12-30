@@ -25,8 +25,7 @@ header a {
   justify-content: space-around;
   padding-bottom: 115px;
   padding-top: 115px;
-  background: url('img/back.png') no-repeat;
-  background-position: center;
+  background: url('img/back.png') no-repeat center;
   background-size: cover;
 }
 
@@ -196,6 +195,7 @@ footer {
 .footer__links {
   display: flex;
   flex-direction: column;
+  font-weight: bold;
 }
 
 .footer__links a {
