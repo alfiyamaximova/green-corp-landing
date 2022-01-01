@@ -179,6 +179,63 @@ header a {
   color: #ff7039;
 }
 
+.promo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.promo__image {
+  background-image: url(img/promo.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.promo__right {
+  background-color: #dd5f26;
+  padding: 160px 60px;
+}
+
+.promo__message {
+  background-color: white;
+  padding: 30px 40px;
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 500;
+  border-radius: 25px;
+
+}
+
+.promo__message p {
+  opacity: 80%;
+}
+
+.promo__message p:before {
+  content: '\25CF';
+  color: #ec6b29;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.promo__button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 15px 30px;
+  font-weight: 600;
+
+}
+
+.promo__button-container button {
+  background: #107b1c;
+}
+
+.promo__button-container button i {
+  font-size: 15px;
+  margin-left: 5px;
+}
+
 body {
   font-family: 'Raleway', sans-serif;
   color: #213053;

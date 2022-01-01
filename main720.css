@@ -78,6 +78,23 @@
         margin-bottom: 30px;
     }
 
+    .promo {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .promo__image {
+        background-image: url(img/promo.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 500px;
+    }
+
+    .promo__right {
+        background-color: #dd5f26;
+        padding: 50px 10px;
+    }
+
     .form {
         display: flex;
         justify-content: center;
