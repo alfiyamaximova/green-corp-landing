@@ -1,4 +1,5 @@
 const COLORS = ["255,108,80", "5,117,18", "29,39,57", "67,189,81"];
+const BUBBLE_DENSITY = 50;
 
 function generateDecimalBetween(left, right) {
     return (Math.random() * (left - right) + right).toFixed(2);
@@ -21,7 +22,7 @@ class Bubble {
         const randomIndex = Math.floor(Math.random() * COLORS.length);
         this.color = COLORS[randomIndex];
 
-        this.size = generateDecimalBetween(1, 3);
+        this.size = generateDecimalBetween(3, 9);
         this.alpha = generateDecimalBetween(5, 10) / 10;
         this.translateX = generateDecimalBetween(0, this.canvasWidth);
         this.translateY = generateDecimalBetween(0, this.canvasHeight);
@@ -41,11 +42,48 @@ class Bubble {
     }
 }
 
-const canvas = document.getElementById("orb-canvas");
+class CanvasBackground {
+    constructor(id) {
+        this.canvas = document.getElementById(id);
+        this.ctx = this.canvas.getContext('2d');
+        this.gpr = window.devicePixelRatio;
+    }
 
-const bubbles = [];
-bubbles.push(new Bubble(canvas));
-bubbles.push(new Bubble(canvas));
-bubbles.push(new Bubble(canvas));
+    start() {
+        this.canvasSize();
+        this.generateBubbles();
+        this.animate();
+    }
 
-console.log(bubbles);
+    canvasSize() {
+        this.canvas.width = this.canvas.offsetWidth * this.gpr;
+        this.canvas.height = this.canvas.offsetHeight * this.gpr;
+        this.ctx.scale(this.gpr, this.gpr);
+    }
+
+    generateBubbles() {
+        this.bubblesList = [];
+        for (let i = 0; i < BUBBLE_DENSITY; i++) {
+            this.bubblesList.push(new Bubble(this.canvas));
+        }
+    }
+
+    animate() {
+        this.ctx.clearRect(0, 0, this.canvas.clientWidth, this.canvas.clientHeight);
+
+        this.bubblesList.forEach(bubble => {
+            bubble.move();
+            this.ctx.translate(bubble.translateX, bubble.translateY);
+            this.ctx.beginPath();
+            this.ctx.arc(0, 0, bubble.size, 0, 2 * Math.PI);
+            this.ctx.fillStyle = `rgba(${bubble.color},${bubble.alpha})`;
+            this.ctx.fill();
+            this.ctx.setTransform(this.gpr, 0, 0, this.gpr, 0, 0);
+        });
+
+        requestAnimationFrame(this.animate.bind(this));
+    }
+}
+
+const canvasBackground = new CanvasBackground('orb-canvas');
+canvasBackground.start();
