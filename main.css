@@ -23,6 +23,7 @@ header a {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  position: relative;
   padding-bottom: 115px;
   padding-top: 115px;
   background: url('img/back.png') no-repeat center;
@@ -70,6 +71,13 @@ header a {
 
 .about__info {
   max-width: 550px;
+}
+
+.orb-canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
 }
 
 .features {
