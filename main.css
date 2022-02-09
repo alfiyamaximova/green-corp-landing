@@ -89,6 +89,10 @@ header a {
   height: 100%;
 }
 
+.more-button {
+  position: absolute; /* without this modification canvas will block this button (not possible to click on it) */
+}
+
 .features {
   background-color: white;
   padding: 115px 60px;
